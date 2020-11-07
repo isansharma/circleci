@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/node:7
+    steps:
+      - checkout
+      - run:
+          name: install npm dependencies
+          command: |
+            npm install
+      - run:
+          name: start the server
+          command: |
+            node server.js
